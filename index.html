@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio Desarrollo Sustentable</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        :root {
+            --azul: #002147;
+            --amarillo: #fbc02d;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 2px solid #ccc;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo span {
+            font-weight: bold;
+            font-size: 16px;
+            color: var(--azul);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--azul);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-bottom: 3px solid transparent;
+            transition: border-bottom 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover,
+        nav a.active {
+            border-bottom: 3px solid var(--amarillo);
+            color: var(--amarillo);
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        main h1 {
+            color: var(--azul);
+        }
+
+        footer {
+            background-color: var(--azul);
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            font-size: 14px;
+        }
+
+        footer .columna {
+            margin: 10px 20px;
+            min-width: 150px;
+        }
+
+        footer .columna h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        footer .columna a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        footer .columna a:hover {
+            color: var(--amarillo);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #ccc;
+            font-size: 12px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .redes a {
+            margin-right: 20px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .redes a:hover {
+            color: var(--amarillo);
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        #lightbox img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 5%;
+            border-radius: 10px;
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--amarillo);
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="icono.png" alt="Logo" />
+            <span id="seccion-actual">INICIO</span>
+        </div>
+
+        <nav>
+            <a href="#" class="active" onclick="cambiarSeccion('INICIO')">Inicio</a>
+            <a href="#" onclick="cambiarSeccion('Unidad 1')">Unidad 1</a>
+            <a href="#" onclick="cambiarSeccion('Unidad 2')">Unidad 2</a>
+            <a href="#" onclick="cambiarSeccion('Unidad 3')">Unidad 3</a>
+            <a href="#" onclick="cambiarSeccion('Unidad 4')">Unidad 4</a>
+            <a href="#" onclick="cambiarSeccion('Unidad 5')">Unidad 5</a>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <h1>¿Qué es el Desarrollo Sustentable?</h1>
+        <p>Aquí puedes explorar las unidades y tus avances.</p>
+
+        <section
+            style="
+                max-width: 800px;
+                margin: 20px auto;
+                font-size: 16px;
+                line-height: 1.5;
+            "
+        >
+            <p>
+                El desarrollo sustentable busca satisfacer las necesidades del presente sin comprometer la
+                capacidad de las futuras generaciones para satisfacer sus propias necesidades. Integra el
+                cuidado del medio ambiente, el bienestar social y el crecimiento económico. Este portafolio
+                refleja el compromiso con la sostenibilidad y la responsabilidad ambiental en cada una de
+                las unidades presentadas.
+            </p>
+        </section>
+
+        <div
+            style="
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+            "
+        >
+            <img
+                src="sustentable1.jpg"
+                alt="Sustentable 1"
+                style="width: 250px; border-radius: 8px"
+            />
+            <img
+                src="sustentable2.png"
+                alt="Sustentable 2"
+                style="width: 250px; border-radius: 8px"
+            />
+            <img
+                src="sustentable3.jpg"
+                alt="Sustentable 3"
+                style="width: 250px; border-radius: 8px"
+            />
+        </div>
+
+        <!-- Nuevo bloque Competencia -->
+        <section
+            style="
+                max-width: 800px;
+                margin: 40px auto 20px;
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: center;
+                color: var(--azul);
+            "
+        >
+            <h2>Competencia</h2>
+            <p>
+                Comprende adecuadamente los conceptos y principios de la sustentabilidad, para integrar y
+                contextualizar los conocimientos adquiridos.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="columna">
+            <h3>Descubre</h3>
+            <a onclick="cambiarSeccion('Unidad 1')">Unidad 1</a>
+            <a onclick="cambiarSeccion('Unidad 2')">Unidad 2</a>
+            <a onclick="cambiarSeccion('Unidad 3')">Unidad 3</a>
+            <a onclick="cambiarSeccion('Unidad 4')">Unidad 4</a>
+            <a onclick="cambiarSeccion('Unidad 5')">Unidad 5</a>
+        </div>
+
+        <div class="columna">
+            <h3>Sobre mí</h3>
+            <a>Alumno: Ivan Zaid Mendoza Aguilar</a>
+            <a>Número de control: 23560268</a>
+            <a>Grupo: 41T</a>
+            <a>Instituto Tecnológico de Lázaro Cárdenas</a>
+            <a>Materia: Desarrollo Sustentable</a>
+        </div>
+
+        <div class="columna">
+            <h3>Redes Sociales</h3>
+            <div class="redes">
+                <a href="https://www.facebook.com/IvanXCloud" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/cloudonbush/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@CloudOnBush" target="_blank">YouTube</a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 Ivan Zaid Mendoza Aguilar. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <a id="lightbox-close" onclick="cerrarLightbox()">×</a>
+        <img id="lightbox-img" src="" alt="Imagen ampliada" />
+    </div>
+
+    <script>
+        function cambiarSeccion(nombre) {
+            document.getElementById('seccion-actual').innerText = nombre.toUpperCase();
+            const links = document.querySelectorAll('nav a');
+            links.forEach((link) => link.classList.remove('active'));
+            links.forEach((link) => {
+                if (link.innerText.trim() === nombre) {
+                    link.classList.add('active');
+                }
+            });
+
+            let contenido = document.getElementById('contenido');
+
+            if (nombre === 'INICIO') {
+                contenido.innerHTML = `
+                <h1>¿Qué es el Desarrollo Sustentable?</h1>
+                <p>Aquí puedes explorar las unidades y tus avances.</p>
+                <section style="max-width: 800px; margin: 20px auto; font-size: 16px; line-height: 1.5;">
+                    <p>
+                        El desarrollo sustentable busca satisfacer las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer sus propias necesidades. 
+                        Integra el cuidado del medio ambiente, el bienestar social y el crecimiento económico. 
+                        Este portafolio refleja el compromiso con la sostenibilidad y la responsabilidad ambiental en cada una de las unidades presentadas.
+                    </p>
+                </section>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                    <img src="sustentable1.jpg" alt="Sustentable 1" style="width: 250px; border-radius: 8px;">
+                    <img src="sustentable2.png" alt="Sustentable 2" style="width: 250px; border-radius: 8px;">
+                    <img src="sustentable3.jpg" alt="Sustentable 3" style="width: 250px; border-radius: 8px;">
+                </div>
+                <section style="max-width: 800px; margin: 40px auto 20px; font-size: 16px; line-height: 1.5; text-align: center; color: var(--azul);">
+                    <h2>Competencia</h2>
+                    <p>Comprende adecuadamente los conceptos y principios de la sustentabilidad, para integrar y contextualizar los conocimientos adquiridos.</p>
+                </section>
+                `;
+            } else if (nombre === 'Unidad 1') {
+                contenido.innerHTML = `
+                <h1>Unidad 1</h1>
+                <p>Trabajos realizados:</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    ${[1, 2, 3, 4]
+                        .map(
+                            (i) => `
+                    <div style="text-align: center;">
+                        <img src="unidad1_${i}.jpg" style="width: 200px; border-radius: 8px; cursor: pointer;" onclick="abrirLightbox('unidad1_${i}.jpg')">
+                        <p>Trabajo ${i}</p>
+                    </div>
+                `
+                        )
+                        .join('')}
+                </div>
+                <h3 style="margin-top: 30px;">Archivos para descargar:</h3>
+                <p><a href="Primera_Sesion.pptx" style="color: var(--azul); font-weight: bold;" download>Descargar: Primera Sesión (PowerPoint)</a></p>
+                <p><a href="AC008-Desarrollo-Sustentable-4.pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: AC008-Desarrollo-Sustentable-4 (PDF)</a></p>
+                <p><a href="UNIDAD1.pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: UNIDAD1 (PDF)</a></p>
+                `;
+            } else if (nombre === 'Unidad 2') {
+                contenido.innerHTML = `
+                <h1>Unidad 2</h1>
+                <p>Trabajos realizados:</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    ${[1, 2, 3]
+                        .map(
+                            (i) => `
+                    <div style="text-align: center;">
+                        <img src="unidad2_${i}.jpg" style="width: 200px; border-radius: 8px; cursor: pointer;" onclick="abrirLightbox('unidad2_${i}.jpg')">
+                        <p>Trabajo ${i}</p>
+                    </div>
+                `
+                        )
+                        .join('')}
+                </div>
+                <h3 style="margin-top: 30px;">Archivos para descargar:</h3>
+                <p><a href="Sutentabilidad.pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: Sutentabilidad.pdf</a></p>
+                <p><a href="Brown and Green Scrapbook Sustainability and Ecology Presentation.pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: Presentación Sustentabilidad</a></p>
+                <p><a href="UNIDAD2.pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: UNIDAD2 (PDF)</a></p>
+                <h3 style="margin-top: 30px;">Video:</h3>
+                <video controls style="max-width: 90%; border-radius: 8px;">
+                    <source src="VID-20250303-WA0168.mp4" type="video/mp4" />
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                `;
+            } else if (nombre === 'Unidad 3') {
+                contenido.innerHTML = `
+                <h1>Unidad 3</h1>
+                <h3 style="margin-top: 30px;">Archivos para descargar:</h3>
+                <p><a href="Cuadrosinoptico LEGEEPA_Ivan Zaid Mendoza Aguilar 41T (1).pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: Cuadro Sinóptico LEGEEPA</a></p>
+                <p><a href="Treabajo Ods 15_ By Ivan Zaid Mendoza Aguilar (2).pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: Trabajo ODS 15</a></p>
+                <p><a href="UNIDAD3.pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: UNIDAD3 (PDF)</a></p>
+                `;
+            } else if (nombre === 'Unidad 4') {
+                contenido.innerHTML = `
+                <h1>Unidad 4</h1>
+                <p>Trabajos realizados:</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    ${[1, 2, 3, 4]
+                        .map(
+                            (i) => `
+                    <div style="text-align: center;">
+                        <img src="Unidad4_${i}.jpg" style="width: 200px; border-radius: 8px; cursor: pointer;" onclick="abrirLightbox('Unidad4_${i}.jpg')">
+                        <p>Trabajo ${i}</p>
+                    </div>
+                `
+                        )
+                        .join('')}
+                </div>
+                <h3 style="margin-top: 30px;">Archivos para descargar:</h3>
+                <p><a href="UNIDAD4.pdf" style="color: var(--azul); font-weight: bold;" download>Descargar: UNIDAD4 (PDF)</a></p>
+                `;
+            } else if (nombre === 'Unidad 5') {
+                contenido.innerHTML = `
+                <h1>Unidad 5</h1>
+                <h3 style="margin-top: 30px;">Trabajos para descargar (Word):</h3>
+                <p><a href="HuellaEcologica.docx" style="color: var(--azul); font-weight: bold;" download>Descargar: Huella Ecológica</a></p>
+                <p><a href="ContaminacionAmbiental.docx" style="color: var(--azul); font-weight: bold;" download>Descargar: Contaminación Ambiental</a></p>
+                <p><a href="InsercionInternacional.docx" style="color: var(--azul); font-weight: bold;" download>Descargar: Inserción Internacional</a></p>
+                <p><a href="ReporteGuaya.docx" style="color: var(--azul); font-weight: bold;" download>Descargar: Reporte Guaya</a></p>
+                `;
+            } else {
+                contenido.innerHTML = `<h1>${nombre}</h1><p>Contenido en construcción...</p>`;
+            }
+        }
+
+        function abrirLightbox(imagen) {
+            document.getElementById('lightbox-img').src = imagen;
+            document.getElementById('lightbox').style.display = 'block';
+        }
+
+        function cerrarLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
